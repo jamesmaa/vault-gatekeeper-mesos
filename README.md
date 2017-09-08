@@ -7,7 +7,7 @@ Vault-Gatekeeper-Mesos (VGM) is a small service for delivering [Vault](https://w
 to other services who's lifecycles are managed by [Mesos](https://mesos.apache.org) or one of it's frameworks
 (such as [Marathon](https://mesosphere.github.io/marathon/)), or [ECS](https://aws.amazon.com/ecs/).
 
-VGM takes the Cubbyhole Authenication approach outlined by Jeff Mitchell on [Vault Blog](https://www.hashicorp.com/blog/vault-cubbyhole-principles.html).
+VGM takes the Cubbyhole Authentication approach outlined by Jeff Mitchell on [Vault Blog](https://www.hashicorp.com/blog/vault-cubbyhole-principles.html).
 Specifically Vault response wrapping is used as outlined in the [Vault documentation](https://www.vaultproject.io/docs/concepts/response-wrapping.html).
 In short, a service will request a vault token from VGM supplying its Mesos task id or ECS task arn. VGM will then check with Mesos/ECS to 
 ensure that the task has been recently started and that VGM has not already issued a token for that task id. If so, 
